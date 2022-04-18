@@ -34,7 +34,7 @@ public class EjemploApuntes {
 		//En este caso el divisor se trata de cualquier dígito numérico que al menos aparece una vez 
 		Pattern p = Pattern.compile("\\d+");
 		String[] str = p.split(
-				"Soy Fran. Mi número de empleado es: 456456, mi teléfono es "+ "0546584, mi correo electrónico es aaaa@aaa.com"); 
+				"Soy Fran. Mi número de empleado es: 456456, mi teléfono es 0546584, mi correo electrónico es aaaa@aaa.com"); 
 		for (String elem : str) {
 			System.out.println(elem);
 		}
