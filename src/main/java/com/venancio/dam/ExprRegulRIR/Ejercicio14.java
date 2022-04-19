@@ -1,10 +1,10 @@
-package ejerciciosexpreg.ejerciciosexpreg;
+package com.venancio.dam.ExprRegulRIR;
 
 import java.util.Scanner;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-public class Ejercicio4 {
+public class Ejercicio14 {
 	
 	/* Intenta desarrollar el programa de censura de chat de videojuegos como el Lol. 
 	   Se pedirán mensajes por Scanner y el programa detectará si se trata de malas palabras o insultos 

@@ -1,9 +1,9 @@
-package ejerciciosexpreg.ejerciciosexpreg;
+package com.venancio.dam.ExprRegulRIR;
 
 import java.util.HashMap;
 import java.util.Scanner;
 
-public class Ejercicio2 {
+public class Ejercicio12 {
 	
 	/*Cogiendo el texto que quieras o el que se proporciona como ejemplo, 
 	 * desarrolla un programa que cuente cuantas palabras tiene y cuente cuantas veces se repiten. 

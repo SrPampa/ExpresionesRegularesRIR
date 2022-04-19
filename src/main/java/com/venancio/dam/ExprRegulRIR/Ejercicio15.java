@@ -1,6 +1,6 @@
-package ejerciciosexpreg.ejerciciosexpreg;
+package com.venancio.dam.ExprRegulRIR;
 
-public class Ejercicio5 {
+public class Ejercicio15 {
 
 	/*Crea un programa que genere combinaciones aleatorias de 4 letras y que no pare de generarlas 
 	 * hasta que por azar del universo se cree la palabra "hola", 
