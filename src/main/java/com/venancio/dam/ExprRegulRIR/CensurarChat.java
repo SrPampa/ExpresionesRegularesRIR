@@ -4,7 +4,7 @@ import java.util.Scanner;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-public class Ejercicio14 {
+public class CensurarChat {
 	
 	/* Intenta desarrollar el programa de censura de chat de videojuegos como el Lol. 
 	   Se pedirán mensajes por Scanner y el programa detectará si se trata de malas palabras o insultos 

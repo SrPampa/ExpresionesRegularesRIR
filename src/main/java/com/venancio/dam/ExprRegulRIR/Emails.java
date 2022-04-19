@@ -2,7 +2,7 @@ package com.venancio.dam.ExprRegulRIR;
 
 import java.util.Scanner;
 
-public class Ejercicio13 {
+public class Emails {
 	
 	/* Crea un programa en el que puedas meter una dirección de mail 
 	   y te diga si es correcta o no */

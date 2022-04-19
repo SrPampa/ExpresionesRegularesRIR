@@ -3,7 +3,7 @@ package com.venancio.dam.ExprRegulRIR;
 import java.util.ArrayList;
 import java.util.Scanner;
 
-public class Ejercicio11 {
+public class Matriculas {
 	
 	/* Dada una lista de matriculas de coches, debes realizar un programa que identifique, cuente, 
 	   guarde e imprima una lista con las matrículas Modernas (tipo 0000 XXX), 
