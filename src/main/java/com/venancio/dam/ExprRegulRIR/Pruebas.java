@@ -7,9 +7,9 @@ public class Pruebas {
 
 	public static void main(String[] args) {
 
-		String texto = "4 de abril de 1995 y 31 de octubre de 1996";
+		String texto = " camión, Jaén boalicón estúdiánte eeioro abueilo Álgebra Fú";
 
-		Pattern patronFecha = Pattern.compile("([1-9]|[12][0-9]|[3][01])\sde\s(enero|febrero|marzo|abril|mayo|junio|julio|agosto|septiembre|octubre|noviembre|diciembre) de ([12][0-9])\\d{2}");
+		Pattern patronFecha = Pattern.compile("[A-Za-z]?([a-z]+)?( Á| É| Í| Ó| Ú|á|é|í|ó|ú)([a-z]+)?");
 		Matcher matFecha = patronFecha.matcher(texto);
 
 		int coincidencias = 0;
@@ -18,7 +18,7 @@ public class Pruebas {
 			System.out.println(matFecha.group());
 			coincidencias++;
 		}
-		System.out.println("Fechas encontradas: "+coincidencias);
+		System.out.println("palabras: "+coincidencias);
 
 	
 	}
