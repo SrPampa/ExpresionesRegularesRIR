@@ -46,7 +46,7 @@ public class Raíz {
 		System.out.println("Hay " + palabras.size() + " palabras no repetidas");
 		System.out.println("Lista de palabras no repetidas:");
 		for (int i = 0; i < palabras.size(); i++) {
-			System.out.println(i+1 + ". " + palabras.get(i));
+			System.out.println(i + 1 + ". " + palabras.get(i));
 		}
 	}
 
@@ -61,11 +61,11 @@ public class Raíz {
 	}
 
 	public static ArrayList<String> listaPalabrasNoRepetidas(Pattern patron, Matcher mat) {
-		
+
 		ArrayList<String> palabras = new ArrayList<String>();
 
 		while (mat.find()) {
-			String aux = mat.group().replaceAll("\\W", "");
+			String aux = mat.group().replaceAll("\\W", "").toLowerCase();
 			if (!palabras.contains(aux)) {
 				palabras.add(aux);
 			}
