@@ -37,17 +37,17 @@ public class RaízB {
 		Pattern p1 = Pattern.compile("(^|\\W)(ol|huel|Ol|Huel)([a-z]+)(\\W|$)");
 		Matcher mat = p1.matcher(texto);
 
-		ArrayList<String> coincidencias = new ArrayList<String>();
+		ArrayList<String> palabras = new ArrayList<String>();
 
 		while (mat.find()) {
 			String a = mat.group().replaceAll("\\W", "");
-			if (!coincidencias.contains(a)) {
-				coincidencias.add(a);
+			if (!palabras.contains(a)) {
+				palabras.add(a);
 			}
 		}
 		
-		for (int i = 0; i < coincidencias.size(); i++) {
-			System.out.println(i+1 + ". " + coincidencias.get(i));
+		for (int i = 0; i < palabras.size(); i++) {
+			System.out.println(i+1 + ". " + palabras.get(i));
 		}
 		
 		

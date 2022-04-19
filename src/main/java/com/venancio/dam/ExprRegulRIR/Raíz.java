@@ -1,5 +1,6 @@
 package com.venancio.dam.ExprRegulRIR;
 
+import java.util.ArrayList;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -34,17 +35,43 @@ public class Raíz {
 				+ "estar alguien al olor\r\n" + "\r\n" + "1. loc. verb. coloq. estar al husmo.";
 
 		Pattern patron = Pattern.compile("(^|\\W)(ol|huel|Ol|Huel)([a-z]+)(\\W|$)");
-		Matcher mat = patron.matcher(texto);
-		
-		int contador = 0;
-			while (mat.find()) {
-			
-				System.out.println(mat.group() + " posicion inicial: " + mat.start() + " posicion final: " + mat.end());
-				contador++;				
-			}
-			
-		System.out.println("\nAparecen " + contador + " resultados");
-		
+		Matcher matA = patron.matcher(texto);
+		Matcher matB = patron.matcher(texto);
+
+		System.out.println(
+				"Hay " + contadorPalabras(patron, matA) + " en el texto que comparten la raíz de la palabra 'oler'");
+
+		ArrayList<String> palabras = listaPalabrasNoRepetidas(patron, matB);
+
+		System.out.println("Hay " + palabras.size() + " palabras no repetidas");
+		System.out.println("Lista de palabras no repetidas:");
+		for (int i = 0; i < palabras.size(); i++) {
+			System.out.println(i+1 + ". " + palabras.get(i));
+		}
 	}
 
+	public static int contadorPalabras(Pattern patron, Matcher mat) {
+		int contador = 0;
+
+		while (mat.find()) {
+//			System.out.println(mat.group() + " posicion inicial: " + mat.start() + " posicion final: " + mat.end());
+			contador++;
+		}
+		return contador;
+	}
+
+	public static ArrayList<String> listaPalabrasNoRepetidas(Pattern patron, Matcher mat) {
+		
+		ArrayList<String> palabras = new ArrayList<String>();
+
+		while (mat.find()) {
+			String aux = mat.group().replaceAll("\\W", "");
+			if (!palabras.contains(aux)) {
+				palabras.add(aux);
+			}
+		}
+
+		return palabras;
+
+	}
 }

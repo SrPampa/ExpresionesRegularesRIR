@@ -12,11 +12,12 @@ public class Password {
 				+ "iseyered;\r\n" + "2zhHue2H;\r\n" + "T!JV@Mwj;\r\n" + "uQt%@@$$g;\r\n" + "NBT8SJF^Q;\r\n"
 				+ "nitoNeRIK;\r\n" + "z^qM%fDZ3;\r\n";
 
-		// Contraseña segura
+		int contador = 0;
+
 		Pattern patron = Pattern.compile(
 				"(^|\\n)(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*[*.!@$%^&(){}\\[\\]:;<>,.?/~_+-=|\\\\]).{8,32}(;|$)");
 		Matcher mat = patron.matcher(password);
-		int contador = 0;
+				
 		while (mat.find()) {
 			System.out.println(mat.group() + " posicion inicial: " + mat.start() + " posicion final: " + mat.end());
 			contador++;

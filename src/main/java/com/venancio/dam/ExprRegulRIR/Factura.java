@@ -765,12 +765,17 @@ public class Factura {
 				+ "LINO-Delicateses	Ave. 5 de Mayo Porlamar	4980	Venezuela	I. de Margarita	10838	Langostinos tigre Carnarvon	$62,50	25	25,00%	$1.171,88\r\n"
 				+ "LINO-Delicateses	Ave. 5 de Mayo Porlamar	4980	Venezuela	I. de Margarita	10838	Escabeche de arenque	$19,00	50	25,00%	$712,50\r\n";
 
+		
+		System.out.println("Total en dólares: " + calcularTotalDolares(texto) + " $");
+		System.out.println("Total en euros: " + calcularTotalEuros(texto) + " €");
+		System.out.println("Total en libras: " + calcularTotalLibras(texto) + " £");
+
+	}
+
+	public static double calcularTotalDolares(String texto) {
+
 		Pattern patronDolar = Pattern.compile("\\$[0-9]*,[0-9]*\\r");
 		Matcher matDolar = patronDolar.matcher(texto);
-		Pattern patronEuro = Pattern.compile("€\\s[0-9]*,[0-9]*\\r");
-		Matcher matEuro = patronEuro.matcher(texto);
-		Pattern patronLibra = Pattern.compile("£[0-9]*,[0-9]*\\r");
-		Matcher matLibra = patronLibra.matcher(texto);
 
 		double totalDolar = 0;
 		while (matDolar.find()) {
@@ -780,8 +785,14 @@ public class Factura {
 //			System.out.println(matDolar.group() + " posicion inicial: " + matDolar.start() + " posicion final: " + matDolar.end());
 
 		}
+		return totalDolar;
 
-		System.out.println("Total en dólares: " + totalDolar + " $");
+	}
+
+	public static double calcularTotalEuros(String texto) {
+
+		Pattern patronEuro = Pattern.compile("€\\s[0-9]*,[0-9]*\\r");
+		Matcher matEuro = patronEuro.matcher(texto);
 
 		double totalEuro = 0;
 		while (matEuro.find()) {
@@ -791,8 +802,15 @@ public class Factura {
 //			System.out.println(matEuro.group() + " posicion inicial: " + matEuro.start() + " posicion final: " + matEuro.end());
 
 		}
-		System.out.println("Total en euros: " + totalEuro + " €");
+		return totalEuro;
+
+	}
+
+	public static double calcularTotalLibras(String texto) {
 		
+		Pattern patronLibra = Pattern.compile("£[0-9]*,[0-9]*\\r");
+		Matcher matLibra = patronLibra.matcher(texto);
+
 		double totalLibra = 0;
 		while (matLibra.find()) {
 			String dinero = matLibra.group().replaceAll("£", "");
@@ -801,8 +819,6 @@ public class Factura {
 //			System.out.println(matLibra.group() + " posicion inicial: " + matLibra.start() + " posicion final: " + matLibra.end());
 
 		}
-		System.out.println("Total en libras: " + totalLibra + " £");
-
+		return totalLibra;
 	}
-
 }
