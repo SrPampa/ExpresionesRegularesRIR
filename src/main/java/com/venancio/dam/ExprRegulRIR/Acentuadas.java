@@ -78,8 +78,7 @@ public class Acentuadas {
 				+ "\r\n" + "Escala Auxiliar Administrativa\r\n"
 				+ "Resolución de 14 de abril de 1998, de la Universidad de Jaén, por la que se aprueba la relación de aspirantes admitidos y excluidos y se nombra el Tribunal calificador de las pruebas selectivas de ingreso en la Escala Auxiliar Administrativa.";
 		
-		Pattern patronAcento = Pattern.compile("[A-Za-z]([a-z]+)?(á|é|í|ó|ú)([a-z]+)?"
-				);
+		Pattern patronAcento = Pattern.compile("[A-Za-z]([a-z]+)?(á|é|í|ó|ú)([a-z]+)?");
 		Matcher matAcentuadas = patronAcento.matcher(texto);
 
 		int coincidencias = 0;
